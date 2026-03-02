@@ -1,0 +1,13 @@
+When you first ran pip install setuptools, pip looked at your environment and said:
+
+"Yep, I see a folder named setuptools (v82.0.0). We're all good!"
+
+But when you ran your Python code, cvlib tried to do this:
+from pkg_resources import resource_filename
+
+Because version 82.0.0 no longer contains that file, Python crashed with a ModuleNotFoundError, even though the parent package (setuptools) was technically "there."
+
+The "Fix" you just applied
+By running pip install "setuptools<70.0.0", you forced your environment to go back to an older version that still carries that legacy pkg_resources module. Now, cvlib can find the tools it needs to function.
+
+Would you like me to check if your cvlib can successfully download the pre-trained model weights now, or are you ready to start detecting some faces?
