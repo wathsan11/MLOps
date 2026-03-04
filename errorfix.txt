@@ -11,3 +11,6 @@ The "Fix" you just applied
 By running pip install "setuptools<70.0.0", you forced your environment to go back to an older version that still carries that legacy pkg_resources module. Now, cvlib can find the tools it needs to function.
 
 Would you like me to check if your cvlib can successfully download the pre-trained model weights now, or are you ready to start detecting some faces?
+
+
+/////pip install "setuptools<70.0.0"////
