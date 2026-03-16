@@ -1,0 +1,29 @@
+#Build the image
+
+docker build -t w1_lab .
+//-t w1_lab <--- You are naming (tagging) the image
+
+#Run a container
+
+docker run -d --name w1_lab -p 80:80 w1_lab
+//-d <--- The container runs in the background(detached mode)
+//--name w1_lab <--- This gives your container a custom name:
+//-p 80:80 <---- This maps ports between your computer and the container.  ///-p hostPort:containerPort///
+
+docker ps
+
+#Test the App
+
+//Open a web browser and go to http://localhost:80
+//Appending /docs will also land you in the FastAPI UI:
+
+# Managing the container
+//After testing, you can stop the service with:
+
+docker stop w1_lab
+//You should not see it in the output when you run docker ps again. You can restart the container with:
+
+docker start w1_lab
+//If for some reason you want to remove it completely, you can run this while the container is stopped:
+
+docker remove w1_lab
